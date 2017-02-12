@@ -9,12 +9,12 @@ def gen(start=None, stop=10):
         yield start
         start += 1
 
-# g = gen()
-# for _ in range(10):
-#     try:
-#         print(g.__next__())
-#     except StopIteration:
-#         print('finish')
+g = gen()
+for _ in range(10):
+    try:
+        print(g.__next__())
+    except StopIteration:
+        print('finish')
 
 
 # Создать класс коллекцию которая будет в себе хранить список пользователей(классы которые писали для мужчин и женщин)
@@ -94,16 +94,17 @@ Ron = Man('Ron', 22)
 humans = HumanCollection()
 humans.append_human(Mary)
 humans.append_human(Sara)
+humans.append_human(Ann)
 humans.append_human(Jon)
 humans.append_human(Ben)
 humans.append_human(Ron)
 
 humans.print_male()
-print("*"*10)
+print("*"*10, "возвращает только женщин")
 humans.print_female()
-print("*"*10)
+print("*"*10, " возвращает только тех кто старше заданного возраста, по умолчанию 21")
 humans.print_older_human()
-print("*"*10)
+print("*"*10, " возвращает только тех кто младше заданного возраста, по умолчанию 21")
 humans.print_smaller_human()
 
 
